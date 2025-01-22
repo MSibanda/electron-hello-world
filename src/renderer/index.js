@@ -1,3 +1,5 @@
+// Entry point for React
+
 /**
  * This file will automatically be loaded by webpack and run in the "renderer" context.
  * To learn more about the differences between the "main" and the "renderer" context in
@@ -27,6 +29,12 @@
  */
 
 // Add this to the end of the existing file
-import "./app.jsx";
+import * as React from "react";
+import { createRoot } from "react-dom/client";
+
+import App from "./app.jsx";
+
+const root = createRoot(document.body);
+root.render(<App />);
 
 console.log('👋 This message is being logged by "renderer.js", included via webpack');
