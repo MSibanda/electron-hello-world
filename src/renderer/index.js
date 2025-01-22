@@ -34,7 +34,6 @@ import { createRoot } from "react-dom/client";
 
 import App from "./app.jsx";
 
-const root = createRoot(document.body);
-root.render(<App />);
+createRoot(document.getElementById("root")).render(<App />);
 
-console.log('👋 This message is being logged by "renderer.js", included via webpack');
+console.log('👋 This message is being logged by "index.js"');

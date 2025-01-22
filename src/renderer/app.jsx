@@ -1,17 +1,17 @@
 import * as React from "react";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
+
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
 
 const App = () => {
 	return (
-		<div>
-			<h1>Hello from React!</h1>
-			<p>Welcome to the Electron-React app.</p>
-			<button onClick={() => console.log("Button Clicked!")}>Click Me</button>
-			<ul>
-				<li>Feature 1</li>
-				<li>Feature 2</li>
-				<li>Feature 3</li>
-			</ul>
-		</div>
+		<Router>
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/about" element={<About />} />
+			</Routes>
+		</Router>
 	);
 };
 

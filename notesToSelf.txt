@@ -1,0 +1,36 @@
+Renderer Process
+
+- Handles user interactions, UI rendering, and frontend logic.
+- Communicates with the main process via IPC channels exposed by Electron’s preload.js.
+
+Component Flow 
+
+- Components can fetch data from the main process via IPC or interact with browser APIs provided by the preload script.
+
+
+Single Page Application (Single Renderer)
+
+- Pages are seaprate React Components 
+- Runs on a single renderer 
+- The BrowserWindow remains the same, and the React app dynamically updates the DOM.
+
+- Pages are React components within a single React app (SPA model). Fast, simple, suitable for most apps.
+
+
+(AND/OR) Multi-renderer setup
+
+- Separate Renderer with its own BrowserWindow or WebView.
+- Communication between windows or with the main process is done via IPC.
+
+
+Routing
+
+- Use Hashrouter (#) Instead of default router (/)
+- Browser works in dev where electron uses html:// but
+- Eletron uses file system in prod
+- Hash is used for file-based environments
+
+
+Electron Load Order
+
+- Electron shows index.html whilst React is being mounted onto the root
